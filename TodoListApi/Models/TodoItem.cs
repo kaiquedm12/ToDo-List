@@ -13,8 +13,9 @@ public class TodoItem
 
     /// <summary>
     /// Título ou descrição curta da tarefa.
+    /// Agora declarado como anulável para evitar inicializadores null-forgiving.
     /// </summary>
-    public string Title { get; set; } = null!;
+    public string? Title { get; set; }
 
     /// <summary>
     /// Indica se a tarefa foi marcada como concluída.

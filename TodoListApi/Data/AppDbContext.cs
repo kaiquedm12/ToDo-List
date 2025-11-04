@@ -16,9 +16,9 @@ public class AppDbContext : DbContext
    
     /// <summary>
     /// Conjunto de tarefas (mapeado para a tabela de TodoItems).
-    /// O inicializador `= null!` é usado para suprimir o warning de propriedade não-nula
-    /// porque o EF popula esta propriedade em tempo de execução.
+    /// Tornado anulável (`DbSet<TodoItem>?`) para evitar uso de inicializadores null-forgiving.
+    /// O EF Core popula esta propriedade em tempo de execução quando o contexto é usado.
     /// </summary>
-    public DbSet<TodoItem> TodoItems { get; set; } = null!;
+    public DbSet<TodoItem>? TodoItems { get; set; }
    
 }
