@@ -1,12 +1,20 @@
 using Microsoft.EntityFrameworkCore;
-using TodolistApi.Data;
+using TodolistApi.Data;using DotNetEnv;
+using DotNetEnv;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configura serviços e dependências
 // Adiciona o DbContext da aplicação. A connection string é lida de appsettings.json
+// Carrega as variáveis do .env
+Env.Load();
+
+// Lê a string de conexão do .env
+var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(connectionString));
 
 // Adiciona suporte a controladores (API controllers)
 builder.Services.AddControllers();

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kaiqu\\OneDrive\\Documentos\\GitHub\\ToDo-List\\TodoListApi\\TodoListApi.csproj": {}
+    "C:\\Users\\kaiqu\\OneDrive\\Documentos\\GitHub\\ToDo-List\\todolistapi\\TodoListApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kaiqu\\OneDrive\\Documentos\\GitHub\\ToDo-List\\TodoListApi\\TodoListApi.csproj": {
+    "C:\\Users\\kaiqu\\OneDrive\\Documentos\\GitHub\\ToDo-List\\todolistapi\\TodoListApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kaiqu\\OneDrive\\Documentos\\GitHub\\ToDo-List\\TodoListApi\\TodoListApi.csproj",
+        "projectUniqueName": "C:\\Users\\kaiqu\\OneDrive\\Documentos\\GitHub\\ToDo-List\\todolistapi\\TodoListApi.csproj",
         "projectName": "TodoListApi",
-        "projectPath": "C:\\Users\\kaiqu\\OneDrive\\Documentos\\GitHub\\ToDo-List\\TodoListApi\\TodoListApi.csproj",
+        "projectPath": "C:\\Users\\kaiqu\\OneDrive\\Documentos\\GitHub\\ToDo-List\\todolistapi\\TodoListApi.csproj",
         "packagesPath": "C:\\Users\\kaiqu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kaiqu\\OneDrive\\Documentos\\GitHub\\ToDo-List\\TodoListApi\\obj\\",
+        "outputPath": "C:\\Users\\kaiqu\\OneDrive\\Documentos\\GitHub\\ToDo-List\\todolistapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kaiqu\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,6 +44,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.10, )"

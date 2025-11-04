@@ -131,3 +131,5 @@ C:\Users\kaiqu\OneDrive\Documentos\GitHub\ToDo-List\todolistapi\obj\Debug\net9.0
 C:\Users\kaiqu\OneDrive\Documentos\GitHub\ToDo-List\todolistapi\obj\Debug\net9.0\TodoListApi.pdb
 C:\Users\kaiqu\OneDrive\Documentos\GitHub\ToDo-List\todolistapi\obj\Debug\net9.0\TodoListApi.genruntimeconfig.cache
 C:\Users\kaiqu\OneDrive\Documentos\GitHub\ToDo-List\todolistapi\obj\Debug\net9.0\ref\TodoListApi.dll
+C:\Users\kaiqu\OneDrive\Documentos\GitHub\ToDo-List\todolistapi\bin\Debug\net9.0\DotNetEnv.dll
+C:\Users\kaiqu\OneDrive\Documentos\GitHub\ToDo-List\todolistapi\bin\Debug\net9.0\Sprache.dll
