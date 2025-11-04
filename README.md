@@ -166,12 +166,6 @@ Obs: Se estiver usando HTTPS local padrão do ASP.NET Core, ajuste a porta confo
 
 O repositório já contém a pasta `Migrations` com migração inicial. Para aplicar essas migrações localmente, use `dotnet ef database update` (veja seção acima).
 
-
-## Notas finais
-
-- Mantive a lógica inalterada e apenas acrescentei comentários e inicializadores mínimos para evitar warnings de compilação.
-- Se preferir que eu não adicione os inicializadores `= null!;` e lide apenas com comentários, posso reverter essa pequena mudança; entretanto, pode ser necessário ajustar o projeto (nullable) ou inicializar propriedades para compilar sem avisos.
-
 Se quiser, eu posso:
 - Reverter ou alterar a forma de lidar com propriedades não-nulas (usar `string?` ou `required`),
 - Adicionar exemplos de requests/responses no README,
