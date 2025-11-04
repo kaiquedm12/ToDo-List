@@ -1,4 +1,5 @@
 namespace TodolistApi.Models;
+using System.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// Representa uma tarefa (to-do) simples.
@@ -15,10 +16,12 @@ public class TodoItem
     /// Título ou descrição curta da tarefa.
     /// Agora declarado como anulável para evitar inicializadores null-forgiving.
     /// </summary>
+    [Required(ErrorMessage = "Title is required")]
+    [StringLength(100, ErrorMessage = "Title cannot be longer than 100 characters")]
     public string? Title { get; set; }
 
     /// <summary>
     /// Indica se a tarefa foi marcada como concluída.
     /// </summary>
-    public bool IsCompleted { get; set; }
+    public bool IsCompleted { get; set; } = false;
 }

@@ -55,6 +55,11 @@ public class TodoController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<TodoItem>> Create(TodoItem item)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
         _context.TodoItems.Add(item);
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = item.Id }, item);
@@ -67,15 +72,29 @@ public class TodoController : ControllerBase
     /// Retorna 204 NoContent em caso de sucesso.
     /// </summary>
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, TodoItem item)
+    public async Task<IActionResult> Update(int id, TodoItem updatedItem)
     {
-        if (id != item.Id) return BadRequest();
+        Console.WriteLine($"🟢 Recebido isCompleted = {updatedItem.IsCompleted}");
 
-        _context.Entry(item).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
+        if (id != updatedItem.Id)
+            return BadRequest();
+
+        var existingItem = await _context.TodoItems.FindAsync(id);
+        if (existingItem == null)
+            return NotFound();
+
+        existingItem.Title = updatedItem.Title;
+        existingItem.IsCompleted = updatedItem.IsCompleted;
+
+        _context.Entry(existingItem).State = EntityState.Modified;
+        var changes = await _context.SaveChangesAsync();
+
+        Console.WriteLine($"🔄 Registros modificados: {changes}");
+        Console.WriteLine($"✅ Novo valor isCompleted: {existingItem.IsCompleted}");
 
         return NoContent();
     }
+
 
     /// <summary>
     /// Remove uma tarefa pelo id.

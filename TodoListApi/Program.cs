@@ -23,6 +23,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+
 var app = builder.Build();
 
 // No ambiente de desenvolvimento habilita a UI do Swagger para testar endpoints
@@ -32,10 +34,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+
+
+app.UseMiddleware<TodolistApi.Middleware.ErrorHandlingMiddleware>();
+
 // Força redirecionamento para HTTPS
 app.UseHttpsRedirection();
 
 // Pipeline de autorização (aqui só o middleware padrão; não há políticas definidas)
+
+app.UseCors(MyAllowSpecificOrigins);
+
 app.UseAuthorization();
 
 // Mapeia os controllers para as rotas definidas por atributos
