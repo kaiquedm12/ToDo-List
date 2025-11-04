@@ -8,20 +8,6 @@ Este repositório contém uma API simples de lista de tarefas (ToDo) construída
 - Objetivo: CRUD para tarefas (todo items) com persistência via EF Core.
 - Banco: PostgreSQL (configurado via `Npgsql` no `Program.cs`, string em `appsettings.json`).
 
-
-## O que foi feito nesta revisão
-
-- Adicionei comentários explicativos (em português) aos arquivos principais do projeto para documentar propósito e funcionamento:
-  - `TodoListApi/Models/TodoItem.cs` - documento da entidade TodoItem e suas propriedades.
-  - `TodoListApi/Data/AppDbContext.cs` - explica o DbContext e o DbSet.
-  - `TodoListApi/Controllers/TodoController.cs` - documenta cada rota e comportamento esperado.
-  - `TodoListApi/Program.cs` - descreve a configuração do app, DbContext, Swagger e pipeline.
-
-- Criei este `README_FULL.md` com instruções de execução e detalhes úteis para desenvolvedores.
-
-> Observação técnica: Para evitar warnings/erros de compilação com propriedades não nulas do C# (quando o projeto tem nullable enabled), foi adicionado o inicializador `= null!;` em duas propriedades que são populadas pelo EF em runtime (`TodoItem.Title` e `AppDbContext.TodoItems`). Isso é uma alteração mínima e não altera a lógica da aplicação — apenas elimina um aviso de compilação.
-
-
 ## Requisitos
 
 - .NET 7/8/9 SDK (o projeto foi visto em .NET 9 no diretório `bin`)
